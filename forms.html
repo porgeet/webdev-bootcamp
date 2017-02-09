@@ -11,10 +11,32 @@
 <!-- action - where the form sends data to -->
 <!-- method - what HTTP method (get/post) -->
 
-	<form>
+	<form > <!-- action="http://wikipedia.org" method="GET" -->
+		<!--
+	 	<label>
+			Username:
+			<input name="username" type="text" placeholder="username">
+		</label>
+
+		<label>
+			Password:
+			<input name="password" type="password" placeholder="password">
+		</label>
+
+		<input type="Submit"> -->
+
+		<!-- type is the type of input field that is produced -->
+		<!-- placeholder puts temporary text into the inputs -->
+		<!-- name is the key, what is entered is the value and is what is sent as a query string -->
+
+		<label for="user">Username:</label>
+		<input id="user" name="username" type="text" placeholder="username">
+
+
+		<label for="pw">Password:</label>
+		<input id="pw" name="password" type="password" placeholder="password">
+
 		
-		<input name="username" type="text" placeholder="username">
-		<input name="password" type="password" placeholder="password">
 		<input type="Submit">
 
 	</form> 
