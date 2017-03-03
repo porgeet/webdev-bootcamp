@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Form Challenge</title>
+	</head>
+
+	<body>
+
+	<h1>Register</h1>
+
+		<form >
+			<div>
+				<label for="first-name">First Name: </label>
+				<input id="first-name" name ="first" type="text" placeholder="First Name" required>
+				<label for="last-name">Last Name: </label>
+				<input id="last-name" name ="last" type="text" placeholder="Last Name" required>
+			</div>
+
+			<div>
+				<label for="male">Male: </label>
+				<input name="sexChoice" id="male" type="radio" value="MALE">
+				<label for="female">Female: </label>
+				<input name="sexChoice" id="female" type="radio" value="FEMALE">
+				<label for="other">Other: </label>
+				<input name="sexChoice" id="other" type="radio" value="OTHER">
+			</div>
+
+			<div>
+				<label for="email">Email: </label>
+				<input id="email" name ="email" type="email" placeholder="Email" required>			
+				<label for="password">Password: </label>
+				<input id="password" name ="password" type="password" required placeholder="Password" pattern=".{5,10}" title="Password must be between 5-10 characters">
+			</div>
+
+			<div>
+				<label>Birthday: 
+					<select name="month">
+						<option value="SELECT" selected>Month</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+					</select>
+
+					<select name="day">
+						<option value="SELECT" selected>Day</option>
+						<option value="Monday">Monday</option>
+						<option value="Tuesday">Tuesday</option>
+						<option value="Wednesday">Wednesday</option>
+					</select>
+
+					<select name="year">
+						<option value="SELECT" selected>Year</option>
+						<option value="1990">1990</option>
+						<option value="1991">1991</option>
+						<option value="1992">1992</option>
+					</select>
+				</label>
+			</div>
+
+			<div>
+				<label for="terms">I agree to the terms and conditions: </label>
+				<input id="terms" name ="terms" type="checkbox"><br>
+			</div>
+			<button>Submit</button>
+
+		</form>
+		
+	</body>
+
+</html>
