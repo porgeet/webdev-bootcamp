@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+	<head>
+		<script type="text/javascript" src="scopeexplanation.js"></script>
+		<title>Scope Explanation</title>
+	</head>
+
+	<body>
+		<h1>Scope Explanation</h1>
+		<p>Scope refers to the context of a variable and what has access to that variable</p>
+		<ul>
+			<li>there is a global object which is the top level context</li>
+			<li>functions are considered children of the global context</li>
+			<li>children have access to their parents variables</li>
+			<li>parents do NOT have access to their childrens variables</li>
+			<li>functions can be nested inside one another</li>
+			<li>a function inside a function would be considered a child of that function, the outer function is a child of the global context. This can go on indefinitely</li>
+			<li>if a var that is declared in the global context is assigned a value inside a function, its value is mutated</li>
+			<li>if a var is declared inside a function and it has the same name as one in the global context, the function will use its own version of that var</li>
+		</ul>
+	</body>
+</html>
