@@ -15,7 +15,7 @@ var p1 = document.getElementById("p1"),
 
 numInput.addEventListener("change", function(){
 	maxScoreDisplay.textContent = numInput.value;
-	maxScore = Number(this.value);
+	maxScore = Number(this.value); // convert value from string to number so === comparisons below compare number to number
 	resetScore();
 })
 
