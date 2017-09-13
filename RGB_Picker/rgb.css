@@ -1,8 +1,17 @@
 body {
+	font-family: "Montserrat", "Avenir";
+	margin: 0;
 	background-color: #232323;
 }
 
-h1, span {
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	background-color: steelBlue;
+	font-weight: normal;
+	line-height: 1.1;
+	text-transform: uppercase;
 	color: white;
 }
 
@@ -17,4 +26,19 @@ h1, span {
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;
+}
+
+#color-display {
+	font-size: 200%;
+}
+
+#stripe {
+	background-color: white;
+	height: 30px;
+	text-align: center;
+	color: black;
+}
+
+.selected {
+	background-color: blue;
 }
