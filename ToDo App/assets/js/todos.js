@@ -14,3 +14,13 @@ $("span").click(function(event){
 	});
 	event.stopPropagation();
 });
+
+
+$("input[type='text']").keypress(function(e){
+	if(e.which === 13){
+		// get text from input
+		var todoText =$(this).val();
+		// creat new li and add to ul
+		
+	}
+});
