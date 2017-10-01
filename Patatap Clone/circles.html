@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Patatap Clone</title>
+	<link rel="stylesheet" href="circles.css">
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+		var peteCircle = new Path.Circle(new Point(0, 0), 10);
+		peteCircle.fillColor = 'pink';
+
+		var symbol = new Symbol(peteCircle);
+		var x = 0;
+		for(x=0; x < 1000; x+=100){
+			for(y=0; y < 1000; y +=100){
+				symbol.place(new Point(x,y));	
+			}			
+		}
+
+	</script>
+</head>
+<body>
+
+	<canvas id="myCanvas" resize></canvas>
+
+</body>
+</html>
