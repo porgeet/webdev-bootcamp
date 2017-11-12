@@ -1,2 +1,4 @@
 #mongo data folder
-YelpCamp/data
+data
+v1/node_modules
+v2/node_modules
