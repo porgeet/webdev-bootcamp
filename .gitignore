@@ -1,4 +1,4 @@
-#mongo data folder
-data
-v1/node_modules
-v2/node_modules
+Databases/node_modules
+YelpCamp/data
+YelpCamp/v1/node_modules
+YelpCamp/v2/node_modules
