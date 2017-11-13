@@ -1,4 +1,6 @@
-Databases/node_modules
-YelpCamp/data
-YelpCamp/v1/node_modules
-YelpCamp/v2/node_modules
+Databases/node_modules/
+YelpCamp/data/
+YelpCamp/v1/node_modules/
+YelpCamp/v2/node_modules/
+RESTful routing/BlogApp/node_modules/
+RESTful routing\BlogApp\package-lock.json
