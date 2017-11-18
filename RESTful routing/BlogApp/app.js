@@ -19,19 +19,53 @@ var blogSchema = new mongoose.Schema({
 });
 var Blog = mongoose.model("Blog", blogSchema);
 
+// Blog.create({
+// 	title: "Awesome Post",
+// 	image: "https://yt3.ggpht.com/-Y-j6XeBB2nE/AAAAAAAAAAI/AAAAAAAAAAA/5Ls6UKoxbT4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+// 	body: "This is the most awesome post ever, because ^^. Yeah!",
+// }, function(err, post){
+// 	if(err){
+// 		console.log(err);
+// 	} else {
+// 		console.log("worked");
+// 		console.log(post);
+// 	}
+// });
+
 // RESTFUL ROUTES
+
 app.get("/", function(req, res){
 	res.render("index");
 });
 
+// INDEX ROUTE
 app.get("/blogs", function(req, res){
 	Blog.find({}, function(err, blogs){
 		if(err){
 			console.log(err);
 		} else {
 			res.render("index", {blogs: blogs});
+			console.log(blogs);
 		}
 	});
+});
+
+// NEW ROUTE
+app.get("/blogs/new", function(req, res){
+	res.render("new");
+});
+
+// CREATE ROUTE
+app.post("/blogs", function(req, res){
+	// create blog
+	Blog.create(req.body.blog, function(err, newBlog){
+		if(err){
+			res.render("new");
+		} else {
+			res.redirect("/blogs");
+		}
+	});
+	// then, redirect to index
 });
 
 app.listen(3000, function(){
