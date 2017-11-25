@@ -1,0 +1,9 @@
+<% include ./partials/header %>
+
+<h1>The News</h1>
+<% news.forEach(function(news){%>
+	<img src="<%= news.image %>" alt="">
+	<h2><%= news.title %></h2>
+	<span><%= news.published %></span>
+	<p><%= news.body %></p>
+<% }); %>
