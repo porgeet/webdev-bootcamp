@@ -44,11 +44,11 @@ app.get("/", function(req, res){
 
 // INDEX ROUTE
 app.get("/blogs", function(req, res){
-	Blog.find({}, function(err, blogs){
+	Blog.find({}, function(err, foundBlogs){
 		if(err){
 			console.log(err);
 		} else {
-			res.render("index", {blogs: blogs});
+			res.render("index", {blogs: foundBlogs});
 		}
 	});
 });

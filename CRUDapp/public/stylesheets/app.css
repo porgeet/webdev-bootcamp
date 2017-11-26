@@ -1,3 +1,7 @@
 .main.container {
 	margin-top: 80px;
 }
+
+#delete {
+	display: inline;
+}

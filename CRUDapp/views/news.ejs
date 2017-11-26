@@ -1,9 +1,18 @@
 <% include ./partials/header %>
-
+<div class="ui container main">
 <h1>The News</h1>
-<% news.forEach(function(news){%>
-	<img src="<%= news.image %>" alt="">
-	<h2><%= news.title %></h2>
-	<span><%= news.published %></span>
-	<p><%= news.body %></p>
-<% }); %>
+	<% news.forEach(function(news){%>
+		<div class="ui raised text container segment">
+			<div class="content">
+				<img class="ui fluid image" src="<%= news.image %>" alt="">
+				<h2><%= news.title %></h2>
+				<div class="meta">
+					<span><%= news.published.toDateString() %></span>
+				</div>
+				<p><%= news.body %></p>
+				<a class="ui olive basic button" href="/news/<%= news.id %>">More</a>
+			</div>	
+		</div>
+	<% }); %>
+</div>
+<% include ./partials/footer %>

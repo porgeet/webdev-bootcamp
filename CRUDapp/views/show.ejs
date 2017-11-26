@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+
+<div class="ui container main">
+	<div class="ui raised segment">
+		<h1><%= news.title %></h1>
+		<img src="<%= news.image %>" alt="">
+		<p><%- news.body %></p>
+		<a class="ui orange basic button" href="/news/<%= news._id %>/edit">Edit</a>
+		<form id="delete" action="/news/<%= news._id %>?_method=DELETE" method="POST">
+			<button class="ui red basic button">Delete</button>
+		</form>
+	</div>
+</div>
+
+<% include ./partials/footer %>
