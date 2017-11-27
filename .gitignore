@@ -2,6 +2,9 @@ Databases/node_modules/
 YelpCamp/data/
 YelpCamp/v1/node_modules/
 YelpCamp/v2/node_modules/
+YelpCamp/v3/node_modules/
+YelpCamp/v3/package-lock.json
+
 RESTful routing/BlogApp/node_modules/
 RESTful routing/BlogApp/package-lock.json
 CRUDapp/node_modules
