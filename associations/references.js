@@ -30,6 +30,9 @@ Post.create({
 	});
 });
 
+// Find user
+// Find all posts for that user
+
 // User.findOne({email: "bob@gmail.com"}).populate("posts").exec(function(err, user){
 // 	if(err){
 // 		console.log(err);

@@ -5,8 +5,8 @@ var userSchema = new mongoose.Schema({
 	email: String,
 	name: String,
 	posts: [{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Post"
+		type: mongoose.Schema.Types.ObjectId, //
+		ref: "Post" // model used to populate
 	}] // array of posts following the postSchema
 });
 
