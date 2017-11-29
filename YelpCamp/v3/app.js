@@ -2,25 +2,13 @@ var express 	= require("express"),
 	app 		= express(),
 	bodyParser 	= require("body-parser"),
 	mongoose 	= require("mongoose"),
-	Campground	= require("./models/campground");
+	Campground	= require("./models/campground"),
+	seedDB		= require("./seeds");
 
-
-mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/yelp_camp_v3", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-// Campground.create({
-// 	name: "Bear Pass", 
-// 	image: "https://cdn.pixabay.com/photo/2015/07/10/17/24/night-839807_960_720.jpg",
-// 	description: "Bears live here, so be bloody careful ffs!"
-// }, function(err, campground){
-// 	if(err){
-// 		console.log(err);
-// 	} else {
-// 		console.log("newly created campground:");
-// 		console.log(campground);
-// 	}
-// });
+seedDB();
 
 app.get("/", function(req, res){
 	res.render("landing");
@@ -36,7 +24,6 @@ app.get("/campgrounds", function(req, res){
 			res.render("index", {campgrounds: allCampgrounds});
 		}
 	});
-	// res.render("campgrounds", {campgrounds: campGrounds});
 });
 
 // NEW - display form to make new campground
@@ -54,7 +41,7 @@ app.post("/campgrounds", function(req, res){
 		name: name,
 		image: image,
 		description: desc
-	}
+	};
 	// create a new campground and save to the db
 	Campground.create(newCampground, function(err, newlyCreated){
 		if(err){
@@ -71,10 +58,13 @@ app.post("/campgrounds", function(req, res){
 // SHOW - shows more info about one campground
 app.get("/campgrounds/:id", function(req, res){
 	// find the campground with provided id
-	Campground.findById(req.params.id, function(err, foundCampground){
+	Campground.findById(req.params.id)
+	.populate("comments") // for each foundCampground fill the "comments" with the info from the ObjectId from the Comment model
+	.exec(function(err, foundCampground){
 		if(err){
 			console.log(err);		
 		} else {
+			console.log(foundCampground);
 			// render show template with that campground
 			res.render("show", {campground: foundCampground});	
 		}
