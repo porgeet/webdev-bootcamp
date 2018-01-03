@@ -11,6 +11,7 @@ var express 		= require("express"),
 	methodOverride	= require("method-override"),
 	seedDB			= require("./seeds");
 
+// Making routes available in var to router
 var commentRoutes			= require("./routes/comments"),
 	campgroundRoutes		= require ("./routes/campgrounds"),
 	indexRoutes				= require("./routes/index");
@@ -43,7 +44,7 @@ app.use(function(req, res ,next){
 	next();
 }) // passes the user object to all templates including partials
 
-// Requiring Routes
+// Routing
 app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
